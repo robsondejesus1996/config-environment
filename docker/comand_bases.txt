@@ -1,0 +1,58 @@
+//documentacao
+docker run --help
+
+//criação/baixar da imagem 
+docker run hello-world/ubuntu
+
+//mostrar docker em execução
+docker ps 
+docker container ls 
+
+//ver todos os container em execução ou não 
+docker ps -a 
+docker container ls -a
+
+//imagem vai subir durante 1 dia. Mandendo ele em execução
+docker run ubuntu sleep 1d
+
+//Parar container
+docker stop 752e23ab81ed/nome-container
+
+//Executar o docker por ID
+docker start 752e23ab81ed
+
+//executando modo interativo do ubuntu
+ docker exec -it 752e23ab81ed bash
+
+ //Pausar container 
+ docker pause 752e23ab81ed
+
+ //Despausar container 
+ docker unpause 752e23ab81ed
+
+ //Remover container
+ docker rm 752e23ab81ed
+
+//Criar um container novo e iniciar o bash dele
+ docker run -it ubuntu bash
+
+
+
+ -----------
+ Mapeando porta
+
+//download do imagem e extração da maquina e -d para não travar o terminal
+ docker run -d dockersamples/static-site
+ //Mapeando porta 
+ docker run -d -P dockersamples/static-site
+  docker run -d -p 8080:80 dockersamples/static-site
+
+//Para e Remover container 
+docker rm 55821ae8bd28 --force
+
+ expor a porta do container 
+ //ver a porta do container 
+ docker port 1ec4943be696
+
+ //Acessando o conteúdo do container 
+ http://localhost:55001/
